@@ -1,15 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XamarinDemoApp.Views.SearchPage">
+<ContentPage
+    x:Class="XamarinDemoApp.Views.SearchPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
     <StackLayout Orientation="Vertical" Spacing="12">
-        <Entry />
-        <Button Text="Search"
-                TextColor="White"
-                BackgroundColor="Green"
-                Command="{Binding }"/>
+        <Entry Text="{Binding Keyword, Mode=TwoWay}" />
+        <Button
+            BackgroundColor="Green"
+            Command="{Binding SearchCommand}"
+            Text="搜尋"
+            TextColor="Brown" />
+        <ListView HasUnevenRows="False" ItemsSource="{Binding SearchedEmployees}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="12,6" Orientation="Vertical">
+                            <Label
+                                x:Name="Label1"
+                                FontSize="24"
+                                Text="{Binding Name}" />
+
+                            <Label
+                                x:Name="Label2"
+                                FontSize="18"
+                                Opacity="0.6"
+                                Text="{Binding Department}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

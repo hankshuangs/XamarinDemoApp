@@ -28,7 +28,7 @@ namespace XamarinDemoApp
 
         private async void BtnSearch_OnClicked(object sender, EventArgs e)
         {
-            var mainViewModel = BindingContext as MainViewModel;
+            MainViewModel mainViewModel = BindingContext as MainViewModel;
             if(mainViewModel != null)
             {
                 await Navigation.PushAsync(new SearchPage(mainViewModel));
@@ -37,10 +37,10 @@ namespace XamarinDemoApp
 
         private async void ListView_OnItemTapped(object sender,ItemTappedEventArgs e)
         {
-            var employee = EmployeeListView.SelectedItem as Employee;
+            Employee employee = EmployeeListView.SelectedItem as Employee;
             if (employee !=null)
             {
-                var mainViewModel = BindingContext as MainViewModel;
+                MainViewModel mainViewModel = BindingContext as MainViewModel;
                 if (mainViewModel != null)
                 {
                     mainViewModel.SelectedEmployee = employee;

@@ -21,11 +21,11 @@
 
         <Button
             x:Name="BtnSearch"
+            BackgroundColor="Purple"
             Clicked="BtnSearch_OnClicked"
-            Text="關鍵字搜尋" 
-            TextColor="White"
-            BackgroundColor="Purple"/>
-        
+            Text="關鍵字搜尋"
+            TextColor="White" />
+
         <ListView
             x:Name="EmployeeListView"
             HasUnevenRows="True"

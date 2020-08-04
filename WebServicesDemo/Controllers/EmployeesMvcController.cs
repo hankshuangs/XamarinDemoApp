@@ -13,7 +13,7 @@ namespace WebServicesDemo.Controllers
 {
     public class EmployeesMvcController : Controller
     {
-        private EmployeesContext db = new EmployeesContext();
+        private readonly EmployeesContext db = new EmployeesContext();
 
         // GET: EmployeesMvc
         public ActionResult Index()

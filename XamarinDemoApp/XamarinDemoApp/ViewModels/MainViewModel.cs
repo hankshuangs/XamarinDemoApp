@@ -37,6 +37,19 @@ namespace XamarinDemoApp.ViewModels
             }
         }
 
+        public List<Employee> SearchedEmployees
+        {
+            get
+            {
+                return _searchedEmployees;
+            }
+            set
+            {
+                _searchedEmployees = value;
+                OnPropertyChanged();
+            }
+        }
+
         public Employee SelectedEmployee 
         { 
             get => _selectedEmployee;
@@ -82,14 +95,14 @@ namespace XamarinDemoApp.ViewModels
             }
         }
 
-        public Command SerchCommand
+        public Command SearchCommand
         {
             get
             {
                 return new Command(async () =>
                 {
                     var employeesServices = new EmployeeServices();
-                    await employeesServices.GetEmployeeByKeywordAsync(_selectedEmployee.Id, _selectedEmployee);
+                    SearchedEmployees = await employeesServices.GetEmployeesByKeywordAsync(_keyword);
                 });
             }
         }

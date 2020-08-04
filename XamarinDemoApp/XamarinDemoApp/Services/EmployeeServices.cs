@@ -22,6 +22,7 @@ namespace XamarinDemoApp.Services
             RestClient<Employee> restClient = new RestClient<Employee>();
             await restClient.PostAsync(employee);
         }
+
         public async Task PutEmployeeAsync(int id ,Employee employee)
         {
             RestClient<Employee> restClient = new RestClient<Employee>();
@@ -34,10 +35,10 @@ namespace XamarinDemoApp.Services
             await restClient.DeleteAsync(id);
         }
 
-        public async Task<List<Employee>> GetEmployeesByKeywordAsync()
+        public async Task<List<Employee>> GetEmployeesByKeywordAsync(string keyword)
         {
             RestClient<Employee> restClient = new RestClient<Employee>();
-            var employeesList = await restClient.GetAsync();
+            var employeesList = await restClient.GetByKeywordAsAsync(keyword);
             return employeesList;
         }
     }
