@@ -24,6 +24,21 @@ namespace WebServicesDemo.Controllers
         }
 
         // GET: api/Employees/5
+        [Route("api/Employees/Search/{Keyword}")]
+        [ResponseType(typeof(Employee))]
+        public IHttpActionResult GetEmployee(string Keyword)
+        {
+            //Employee employee = db.Employees.FirstOrDefault(e => e.Name == Keyword);
+            List<Employee> employees = db.Employees.Where(e => e.Name.Contains(Keyword)).ToList();
+            if (employees == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(employees);
+        }
+
+        // GET: api/Employees/5
         [ResponseType(typeof(Employee))]
         public IHttpActionResult GetEmployee(int id)
         {

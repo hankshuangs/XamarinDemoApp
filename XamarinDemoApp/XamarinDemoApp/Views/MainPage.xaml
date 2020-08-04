@@ -18,6 +18,14 @@
             x:Name="BtnNew"
             Clicked="BtnNew_OnClicked"
             Text="新增新的Emplyoee" />
+
+        <Button
+            x:Name="BtnSearch"
+            Clicked="BtnSearch_OnClicked"
+            Text="關鍵字搜尋" 
+            TextColor="White"
+            BackgroundColor="Purple"/>
+        
         <ListView
             x:Name="EmployeeListView"
             HasUnevenRows="True"

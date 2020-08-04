@@ -26,6 +26,15 @@ namespace XamarinDemoApp
             await Navigation.PushAsync(new NewEmployeePage());
         }
 
+        private async void BtnSearch_OnClicked(object sender, EventArgs e)
+        {
+            var mainViewModel = BindingContext as MainViewModel;
+            if(mainViewModel != null)
+            {
+                await Navigation.PushAsync(new SearchPage(mainViewModel));
+            }
+        }
+
         private async void ListView_OnItemTapped(object sender,ItemTappedEventArgs e)
         {
             var employee = EmployeeListView.SelectedItem as Employee;

@@ -13,8 +13,8 @@ namespace XamarinDemoApp.RestClient
     /// </summary>
     public class RestClient<T>
     {
-        //private const string WebServiceUrl = "http://192.168.168.52/api/Employees/";
-        private const string WebServiceUrl = "http://220.134.223.102/api/Employees/";
+        private const string WebServiceUrl = "http://192.168.168.52/api/Employees/";
+        //private const string WebServiceUrl = "http://220.134.223.102/api/Employees/";
 
         public async Task<List<T>> GetAsync()
         {
@@ -64,6 +64,17 @@ namespace XamarinDemoApp.RestClient
             var response = await httpClient.DeleteAsync(WebServiceUrl + id);
 
             return response.IsSuccessStatusCode;
+        }
+
+        public async Task<List<T>> GetByKeywordAsAsync(string keyword )
+        {
+            var httpClient = new HttpClient();
+
+            var json = await httpClient.GetStringAsync(WebServiceUrl+);
+
+            var employees = JsonConvert.DeserializeObject<List<T>>(json);
+
+            return employees;
         }
     }
 }

@@ -17,8 +17,9 @@
 
         <Label Text="Department" />
         <Entry Text="{Binding SelectedEmployee.Department, Mode=TwoWay}" />
-        <Button Command="{Binding PostCommand}" Text="POST Employee" />
-        <Button Command="{Binding PutCommand}" Text="PUT Employee" />
+        <Button Command="{Binding PostCommand}" Text="POST Employee" BackgroundColor="Green" />
+        <Button Command="{Binding PutCommand}" Text="PUT Employee" BackgroundColor="Navy" />
+        <Button Command="{Binding DeleteCommand}" Text="Delete Employee" BackgroundColor="Maroon" />
 
     </StackLayout>
 </ContentPage>

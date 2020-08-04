@@ -14,6 +14,18 @@ namespace XamarinDemoApp.ViewModels
     {
         private List<Employee> _employeesList;
         private Employee _selectedEmployee = new Employee();
+        private List<Employee> _searchedEmployees;
+        private string _keyword;
+
+        public string Keyword
+        {
+            get { return _keyword; }
+            set
+            {
+                _keyword = value;
+                OnPropertyChanged();
+            }
+        }
 
         public List<Employee> EmployeesList
         {
@@ -57,6 +69,31 @@ namespace XamarinDemoApp.ViewModels
                 });
             }
         }
+
+        public Command DeleteCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var employeesServices = new EmployeeServices();
+                    await employeesServices.DeleteEmployeeAsync(_selectedEmployee.Id);
+                });
+            }
+        }
+
+        public Command SerchCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var employeesServices = new EmployeeServices();
+                    await employeesServices.GetEmployeeByKeywordAsync(_selectedEmployee.Id, _selectedEmployee);
+                });
+            }
+        }
+
 
         public MainViewModel()
         {
