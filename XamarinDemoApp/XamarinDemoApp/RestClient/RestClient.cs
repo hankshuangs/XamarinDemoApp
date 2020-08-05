@@ -13,9 +13,8 @@ namespace XamarinDemoApp.RestClient
     /// </summary>
     public class RestClient<T>
     {
-        //private const string WebServiceUrl = "http://192.168.168.52/api/Employees/";
-        private const string WebServiceUrl = "http://220.134.223.102/api/Employees/";
-        //private const string WebServiceUrl = "http://10.0.2.2:50394/api/Employees/";
+        private const string WebServiceUrl = "http://192.168.168.52/api/Employees/";
+        //private const string WebServiceUrl = "http://220.134.223.102/api/Employees/";
 
         public async Task<List<T>> GetAsync()
         {

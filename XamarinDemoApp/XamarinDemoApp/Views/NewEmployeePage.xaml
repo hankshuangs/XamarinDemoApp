@@ -17,9 +17,11 @@
 
         <Label Text="Department" />
         <Entry Text="{Binding SelectedEmployee.Department, Mode=TwoWay}" />
-        <Button Command="{Binding PostCommand}" Text="POST Employee" BackgroundColor="Green" />
-        <Button Command="{Binding PutCommand}" Text="PUT Employee" BackgroundColor="Navy" />
-        <Button Command="{Binding DeleteCommand}" Text="Delete Employee" BackgroundColor="Maroon" />
-
+        <Button Command="{Binding PostCommand}" Text="新增人員(POST)" BackgroundColor="Green" />
+        <Button Command="{Binding PutCommand}" Text="修改人員(PUT)" BackgroundColor="Yellow" />
+        <Button Command="{Binding DeleteCommand}" Text="刪除人員(Delete)" BackgroundColor="Maroon" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"/>
+        <Label Text="{Binding StatusMessage}" TextColor="Green" FontSize="24"/>
     </StackLayout>
 </ContentPage>

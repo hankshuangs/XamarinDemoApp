@@ -37,7 +37,7 @@ namespace XamarinDemoApp
 
         private async void ListView_OnItemTapped(object sender,ItemTappedEventArgs e)
         {
-            Employee employee = EmployeeListView.SelectedItem as Employee;
+            Employee employee = EmployeesListView.SelectedItem as Employee;
             if (employee !=null)
             {
                 MainViewModel mainViewModel = BindingContext as MainViewModel;

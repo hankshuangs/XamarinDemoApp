@@ -13,6 +13,10 @@
             Command="{Binding SearchCommand}"
             Text="搜尋"
             TextColor="Brown" />
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                            IsVisible="{Binding IsBusy}"/>
+
         <ListView HasUnevenRows="False" ItemsSource="{Binding SearchedEmployees}">
             <ListView.ItemTemplate>
                 <DataTemplate>

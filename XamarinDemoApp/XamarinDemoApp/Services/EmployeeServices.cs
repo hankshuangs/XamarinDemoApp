@@ -17,22 +17,25 @@ namespace XamarinDemoApp.Services
             return employeesList;
         }
 
-        public async Task PostEmployeeAsync(Employee employee)
+        public async Task<bool> PostEmployeeAsync(Employee employee)
         {
             RestClient<Employee> restClient = new RestClient<Employee>();
-            await restClient.PostAsync(employee);
+            var IsSuccessStatusCode = await restClient.PostAsync(employee);
+            return IsSuccessStatusCode;
         }
 
-        public async Task PutEmployeeAsync(int id ,Employee employee)
+        public async Task<bool> PutEmployeeAsync(int id ,Employee employee)
         {
             RestClient<Employee> restClient = new RestClient<Employee>();
-            await restClient.PutAsync(id,employee);
+            var IsSuccessStatusCode = await restClient.PutAsync(id,employee);
+            return IsSuccessStatusCode;
         }
 
-        public async Task DeleteEmployeeAsync(int id)
+        public async Task<bool> DeleteEmployeeAsync(int id)
         {
             RestClient<Employee> restClient = new RestClient<Employee>();
-            await restClient.DeleteAsync(id);
+            var IsSuccessStatusCode = await restClient.DeleteAsync(id);
+            return IsSuccessStatusCode;
         }
 
         public async Task<List<Employee>> GetEmployeesByKeywordAsync(string keyword)

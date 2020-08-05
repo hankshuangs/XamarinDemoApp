@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+
+             x:Class="XamarinDemoApp.UI.HrTemplate">
+  <ViewCell.View>
+        <StackLayout Orientation="Vertical" Padding="12,6" BackgroundColor="#AFEEEE">
+            <Label Text="{Binding Name}" FontSize="24" />
+            <Label Text="{Binding Department}" FontSize="18" Opacity="0.6"/>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

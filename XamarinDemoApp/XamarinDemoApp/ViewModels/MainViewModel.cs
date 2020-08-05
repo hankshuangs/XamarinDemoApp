@@ -16,6 +16,8 @@ namespace XamarinDemoApp.ViewModels
         private Employee _selectedEmployee = new Employee();
         private List<Employee> _searchedEmployees;
         private string _keyword;
+        private bool _isBusy = false;
+        private string _statusMessage;
 
         public string Keyword
         {
@@ -50,23 +52,62 @@ namespace XamarinDemoApp.ViewModels
             }
         }
 
-        public Employee SelectedEmployee 
-        { 
+        public Employee SelectedEmployee
+        {
             get => _selectedEmployee;
-            set { 
+            set
+            {
                 _selectedEmployee = value;
                 OnPropertyChanged();
-            } 
+            }
+        }
+
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string StatusMessage
+        {
+            get { return _statusMessage; }
+            set
+            {
+                _statusMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Command RefreshCommand
+        {
+            get
+            {
+                return new Command(async () => await InitializeDataAsync());
+            }
         }
 
         public Command PostCommand
         {
-            get 
+            get
             {
-                return new Command(async() =>
+                return new Command(async () =>
                 {
+                    IsBusy = true;
                     var employeesServices = new EmployeeServices();
-                    await employeesServices.PostEmployeeAsync(_selectedEmployee);
+                    var isSuccess = await employeesServices.PostEmployeeAsync(_selectedEmployee);
+                    if (isSuccess)
+                    {
+                        StatusMessage = "新增成功";
+                    }
+                    else
+                    {
+                        StatusMessage = "新增失敗";
+                    }
+                    IsBusy = false;
                 });
             }
         }
@@ -77,8 +118,18 @@ namespace XamarinDemoApp.ViewModels
             {
                 return new Command(async () =>
                 {
+                    IsBusy = true;
                     var employeesServices = new EmployeeServices();
-                    await employeesServices.PutEmployeeAsync(_selectedEmployee.Id,_selectedEmployee);
+                    var isSuccess = await employeesServices.PutEmployeeAsync(_selectedEmployee.Id, _selectedEmployee);
+                    if (isSuccess)
+                    {
+                        StatusMessage = "更新成功";
+                    }
+                    else
+                    {
+                        StatusMessage = "更新失敗";
+                    }
+                    IsBusy = false;
                 });
             }
         }
@@ -89,8 +140,18 @@ namespace XamarinDemoApp.ViewModels
             {
                 return new Command(async () =>
                 {
+                    IsBusy = true;
                     var employeesServices = new EmployeeServices();
-                    await employeesServices.DeleteEmployeeAsync(_selectedEmployee.Id);
+                    var isSuccess = await employeesServices.DeleteEmployeeAsync(_selectedEmployee.Id);
+                    if (isSuccess)
+                    {
+                        StatusMessage = "刪除成功";
+                    }
+                    else
+                    {
+                        StatusMessage = "刪除失敗";
+                    }
+                    IsBusy = false;
                 });
             }
         }
@@ -101,8 +162,10 @@ namespace XamarinDemoApp.ViewModels
             {
                 return new Command(async () =>
                 {
+                    IsBusy = true;
                     var employeesServices = new EmployeeServices();
                     SearchedEmployees = await employeesServices.GetEmployeesByKeywordAsync(_keyword);
+                    IsBusy = false;
                 });
             }
         }
@@ -110,13 +173,14 @@ namespace XamarinDemoApp.ViewModels
 
         public MainViewModel()
         {
-            InitializeDateAsync();
+            InitializeDataAsync();
         }
-        private async void InitializeDateAsync()
+        private async Task InitializeDataAsync()
         {
+            IsBusy = true;
             var employeeServices = new EmployeeServices();
-
             EmployeesList = await employeeServices.GetEmployeesAsync();
+            IsBusy = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

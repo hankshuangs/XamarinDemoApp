@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yZRrmO4kKBhJc0iOLdQsfO6+oHohVVFDG7UxPZmfsgrIy3Ilda5u6cLAEmvnvyPkka3vEuJoipYQaqsPJwo7cg==",
+  "dgSpecHash": "/m3z4I0LRU/6EQhWeX4bpB3KyYr8OPhsvJnGQMY7cgTtKYyx93ITeY6tFdyNsRdbK4uWuWwI0M1YIf/djOCwKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\XamarinDemoApp\\XamarinDemoApp\\XamarinDemoApp.iOS\\XamarinDemoApp.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Hanks\\source\\repos\\XamarinDemoApp\\XamarinDemoApp\\XamarinDemoApp.iOS\\XamarinDemoApp.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\USER\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\newtonsoft.json.schema\\3.0.13\\newtonsoft.json.schema.3.0.13.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Hanks\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Hanks\\.nuget\\packages\\newtonsoft.json.schema\\3.0.13\\newtonsoft.json.schema.3.0.13.nupkg.sha512",
+    "C:\\Users\\Hanks\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
   ],

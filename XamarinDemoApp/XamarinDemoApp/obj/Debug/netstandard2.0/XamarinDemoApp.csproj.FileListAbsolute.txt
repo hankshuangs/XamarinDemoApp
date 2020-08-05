@@ -44,3 +44,6 @@ C:\Users\USER\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debu
 C:\Users\USER\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debug\netstandard2.0\XamarinDemoApp.dll
 C:\Users\USER\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debug\netstandard2.0\ref\XamarinDemoApp.dll
 C:\Users\USER\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debug\netstandard2.0\XamarinDemoApp.pdb
+C:\Users\Hanks\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debug\netstandard2.0\Views\SearchPage.xaml.g.cs
+C:\Users\Hanks\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debug\netstandard2.0\UI\FinanceTemplate.xaml.g.cs
+C:\Users\Hanks\source\repos\XamarinDemoApp\XamarinDemoApp\XamarinDemoApp\obj\Debug\netstandard2.0\UI\HrTemplate.xaml.g.cs

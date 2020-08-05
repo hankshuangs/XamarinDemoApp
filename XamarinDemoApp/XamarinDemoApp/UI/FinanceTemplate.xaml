@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinDemoApp.UI.FinanceTemplate">
+    <StackLayout Orientation="Vertical" Padding="12,6" BackgroundColor="#FFC0CB">
+        <Label Text="{Binding Name}" FontSize="24" />
+        <Label Text="{Binding Department}" FontSize="18" Opacity="0.6"/>
+    </StackLayout>
+</ViewCell>
